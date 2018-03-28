@@ -22,7 +22,7 @@ public class ReadCSVWithScanner {
 		String line = null;
 		Scanner scanner = null;
 		int index = 0;
-		List<Employee> empList = new ArrayList<>();
+		List<Employee> empList = new ArrayList();
 		int iteration=0;
 		while ((line = reader.readLine()) != null) {
 			// create Employee Object
@@ -33,6 +33,7 @@ public class ReadCSVWithScanner {
 			Employee emp = new Employee();
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
+			
 			while (scanner.hasNext()) {
 				String data = scanner.next();
 				if (index == 0)

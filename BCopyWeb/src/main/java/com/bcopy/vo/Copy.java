@@ -3,7 +3,7 @@ package com.bcopy.vo;
 import java.sql.Timestamp;
 
 public class Copy {
-
+/*
 	private int id;
 	private String symbol;
 	private String Series;
@@ -130,7 +130,107 @@ public class Copy {
 	public void setIsin(String isin) {
 		this.isin = isin;
 	}
-
+*/
+	
+	private int id;
+	private String symbol;
+	private String Series;
+	private String open;
+	private String high;
+	private String low;
+	private String close;
+	private String last;
+	private String preclose;
+	private String tottrdqty;
+	private String tottrdval;
+	private Timestamp createdDate;
+	private String totaltrade;
+	private String isin;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getSymbol() {
+		return symbol;
+	}
+	public void setSymbol(String symbol) {
+		this.symbol = symbol;
+	}
+	public String getSeries() {
+		return Series;
+	}
+	public void setSeries(String series) {
+		Series = series;
+	}
+	public String getOpen() {
+		return open;
+	}
+	public void setOpen(String open) {
+		this.open = open;
+	}
+	public String getHigh() {
+		return high;
+	}
+	public void setHigh(String high) {
+		this.high = high;
+	}
+	public String getLow() {
+		return low;
+	}
+	public void setLow(String low) {
+		this.low = low;
+	}
+	public String getClose() {
+		return close;
+	}
+	public void setClose(String close) {
+		this.close = close;
+	}
+	public String getLast() {
+		return last;
+	}
+	public void setLast(String last) {
+		this.last = last;
+	}
+	public String getPreclose() {
+		return preclose;
+	}
+	public void setPreclose(String preclose) {
+		this.preclose = preclose;
+	}
+	public String getTottrdqty() {
+		return tottrdqty;
+	}
+	public void setTottrdqty(String tottrdqty) {
+		this.tottrdqty = tottrdqty;
+	}
+	public String getTottrdval() {
+		return tottrdval;
+	}
+	public void setTottrdval(String tottrdval) {
+		this.tottrdval = tottrdval;
+	}
+	public Timestamp getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(Timestamp createdDate) {
+		this.createdDate = createdDate;
+	}
+	public String getTotaltrade() {
+		return totaltrade;
+	}
+	public void setTotaltrade(String totaltrade) {
+		this.totaltrade = totaltrade;
+	}
+	public String getIsin() {
+		return isin;
+	}
+	public void setIsin(String isin) {
+		this.isin = isin;
+	}
 	@Override
 	public String toString() {
 		return "Copy [id=" + id + ", symbol=" + symbol + ", Series=" + Series + ", open=" + open + ", high=" + high

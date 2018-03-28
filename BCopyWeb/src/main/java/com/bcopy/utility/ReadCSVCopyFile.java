@@ -38,17 +38,36 @@ public class ReadCSVCopyFile {
 			scanner.useDelimiter(",");
 			
 			while (scanner.hasNext()) {
-				String id=scanner.next();
-				String symbol = scanner.next();
+				String data = scanner.next();
 				
 				if (index == 0)
-					copy.setId(Integer.parseInt(id));
-				
+					copy.setSymbol(data);
 				else if (index == 1)
-					copy.setSymbol(symbol);
-				
+					copy.setSeries(data);
+				else if (index == 2)
+					copy.setOpen(data);
+				else if (index == 3)
+					copy.setHigh(data);
+				else if (index == 4)
+					copy.setLow(data);
+				else if (index == 5)
+					copy.setClose(data);
+				else if (index == 6)
+					copy.setLast(data);
+				else if (index == 7)
+					copy.setPreclose(data);
+				else if (index == 8)
+					copy.setTottrdqty(data);
+				else if (index == 9)
+					copy.setTottrdval(data);
+				//else if (index == 10)
+				//	copy.setCreatedDate(createdDate);
+				else if (index == 11)
+					copy.setTotaltrade(data);
+				else if (index == 12)
+					copy.setIsin(data);	
 				else
-					System.out.println("invalid data::" + symbol);
+					System.out.println("invalid data::" + data);
 				index++;
 			}
 			index = 0;
@@ -63,10 +82,15 @@ public class ReadCSVCopyFile {
 		// System.out.println(empList);
 
 		// Iterate ArrayList
+	
 		for (Copy copy : copyList) {
 			System.out.println(
-					"Id:" + copy.getId() + "\t:" + copy.getSymbol());
+					"Symbol:" + copy.getSymbol() + "\tSeries:" + copy.getSeries() + "\tOpen:" + copy.getOpen() + "\tHigh:" +copy.getHigh() + 
+					"\tLow:" +copy.getLow() + "\tClose:" + copy.getClose() + "\tLast:" + copy.getLast() + "\tPreclose:" + copy.getPreclose() +
+					"\tTotalTradedQuantity:" + copy.getTottrdqty() + "\tTotalTradeVal:"+ copy.getTottrdval() + "\tTotaltrade" + 
+					copy.getTotaltrade() + "\tIsIn:" + copy.getIsin());
 		}
+
 
 	}
 
