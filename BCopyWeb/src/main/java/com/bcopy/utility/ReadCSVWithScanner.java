@@ -23,8 +23,12 @@ public class ReadCSVWithScanner {
 		Scanner scanner = null;
 		int index = 0;
 		List<Employee> empList = new ArrayList();
-
+		int iteration = 0;
 			// create Employee Object
+			 if(iteration == 0) {
+			        iteration++;  
+			        continue;
+			    }
 			Employee emp = new Employee();
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
