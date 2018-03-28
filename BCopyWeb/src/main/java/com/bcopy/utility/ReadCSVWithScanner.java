@@ -22,42 +22,51 @@ public class ReadCSVWithScanner {
 		String line = null;
 		Scanner scanner = null;
 		int index = 0;
-		List<Employee> empList = new ArrayList<>();
+		List<Employee> empList = new ArrayList();
 
-		while ((line = reader.readLine()) != null) {
 			// create Employee Object
 			Employee emp = new Employee();
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
-			while (scanner.hasNext()) {
-				String data = scanner.next();
-				if (index == 0)
-					emp.setId(Integer.parseInt(data));
-				else if (index == 1)
-					emp.setName(data);
-				else if (index == 2)
-					emp.setRole(data);
-				else if (index == 3)
-					emp.setSalary(data);
-				else
-					System.out.println("invalid data::" + data);
-				index++;
+			int iteration = 0;
+			
+			while ((line = reader.readLine()) != null) {
+			    if(iteration == 0) {
+			        iteration++;  
+			        continue;
+			    }
+			    while (scanner.hasNext()) {
+					
+					String data = scanner.next();
+					if (index == 0)
+						emp.setId(Integer.parseInt(data));
+					else if (index == 1)
+						emp.setName(data);
+					else if (index == 2)
+						emp.setRole(data);
+					else if (index == 3)
+						emp.setSalary(data);
+					else
+						System.out.println("invalid data::" + data);
+					index++;
+				}
+				index = 0;
+				// add data to employee arrayList one by one
+				empList.add(emp);
 			}
-			index = 0;
-			// add data to employee arrayList one by one
-			empList.add(emp);
 		}
+		
 
 		// close reader
 		reader.close();
-
+}
 		// ArrayList-[]
 		// System.out.println(empList);
 
 		// Iterate ArrayList
 		for (Employee e : empList) {
 			System.out.println(
-					"Id:" + e.getId() + "\tName:" + e.getName() + "\tRole:" + e.getRole() + "\tSalay:" + e.getSalary());
+					"Id:" + e.getId() + "\tName:" + e.getName() + "\tRole:" + e.getRole() + "\tSalary:" + e.getSalary());
 		}
 
 	}
